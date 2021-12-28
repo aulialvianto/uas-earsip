@@ -5,5 +5,3 @@
 <?php include "content.php"; ?>
 
 <?php include "template/footer.php"; ?>
-
-

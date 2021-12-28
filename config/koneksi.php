@@ -8,12 +8,6 @@
 	$pass		= "12345";
 	$database 	= "dbarsip";
 
-	$conn = mysqli_connect("$hostname","$username","$pass","$dbarsip");
-	//koneksi database
-	if(mysqli_connect())
-	{
-		echo "Failed to Connect Mysql" . mysqli_connect();
-	}
-
+	$koneksi = mysqli_connect($hostname, $username, $pass, $database) or die(mysqli_error($koneksi));
 
 ?>
