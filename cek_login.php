@@ -1,20 +1,10 @@
 <?php
 session_start();
 include "config/koneksi.php";
-
-//contoh login sederhana, bisa dikembang lagi
-
-//password diamankan dengan enkripsi kriptografi md5
-@$pass = md5($_POST['password']);
-
-//mysqli_escape_string fungsinya untuk mengamankan karakter aneh yang diinputkan user, seperti sql injection
-
-@$username = mysqli_escape_string($koneksi, $_POST['username']);
-@$password = mysqli_escape_string($koneksi, $pass);
-
-$login = mysqli_query($koneksi, "SELECT * from tbl_user 
-								 WHERE username='$username' and password = '$password' ");
-$data = mysqli_fetch_array($login);
+$username=$_POST['username']; 
+$password=$_POST['pass']; 
+$pas=md5($pass);
+$query=mysqli_query($conn,"select * from tbl_user where uname='$username' and pass='$password'");
 if($data)
 {
 	$_SESSION['id_user'] = $data['id_user'];
@@ -28,5 +18,4 @@ else
 			document.location='index.php';
 		  </script>";
 }
-
-?>
+ ?> 

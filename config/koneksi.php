@@ -3,13 +3,17 @@
 	//buat koneksi database
 
 	//persiapan identitas server
-	$server 	= "10.0.0.149"; //Nama Server
-	$user 		= "admin"; //username database server
-	$pass		= "12345"; //password database server
-	$database 	= "dbarsip"; //Nama Database
+	$hostname 	= "10.0.0.149";
+	$username	= "admin";
+	$pass		= "12345";
+	$database 	= "dbarsip";
 
+	$conn = mysqli_connect("$hostname","$username","$pass","$dbarsip");
 	//koneksi database
-	$koneksi = mysqli_connect($server, $user, $pass, $database) or die(mysqli_error($koneksi));
+	if(mysqli_connect())
+	{
+		echo "Failed to Connect Mysql" . mysqli_connect();
+	}
 
 
 ?>
